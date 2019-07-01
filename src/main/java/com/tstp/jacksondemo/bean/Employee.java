@@ -3,6 +3,8 @@ package com.tstp.jacksondemo.bean;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.tstp.jacksondemo.serialize.CustomDateForWebSerializer;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,7 +27,8 @@ public class Employee {
   private String firstName;
   @NonNull
   private String lastName;
-  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "Asia/Bangkok")
+//  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "Asia/Bangkok")
+  @JsonSerialize(using = CustomDateForWebSerializer.class)
   private Date birthday;
 
 }

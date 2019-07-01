@@ -32,10 +32,10 @@ public class JacksonDemoApplicationTests {
 
     String toParse = "1996-03-13T00:36:03Z";
     Date date = df.parse(toParse);
-    Employee event = new Employee("01", "name", "surname", date);
+    Employee employee = new Employee("01", "name", "surname", date);
 
     ObjectMapper mapper = new ObjectMapper();
-    String result = mapper.writeValueAsString(event);
+    String result = mapper.writeValueAsString(employee);
     assertThat(result, containsString(toParse));
   }
 
