@@ -6,6 +6,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
 /**
  * @author sathaphorn.stp (Tis)
@@ -14,10 +16,16 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@RequiredArgsConstructor
 public class Employee {
-  private String empId;
-  private String firstname;
-  private String lastName;
+
+  @NonNull
+  public String empId;
+  @NonNull
+  public String firstname;
+  @NonNull
+  public String lastName;
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "Asia/Bangkok")
-  private Date birthday;
+  public Date birthday;
+
 }
