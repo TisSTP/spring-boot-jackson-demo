@@ -20,12 +20,12 @@ import lombok.RequiredArgsConstructor;
 public class Employee {
 
   @NonNull
-  public String empId;
+  private String empId;
   @NonNull
-  public String firstname;
+  private String firstName;
   @NonNull
-  public String lastName;
+  private String lastName;
   @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "Asia/Bangkok")
-  public Date birthday;
+  private Date birthday;
 
 }
